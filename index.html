@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aditya Yadav | Darkr3nder - Graphic Designer &amp; AI Creator</title>
+<meta name="description" content="Aditya Yadav (Darkr3nder) - Graphic Designer, Web Developer, AI Creator &amp; Digital Artist with 20+ years of experience. Logo design, brand identity, photo retouching, UI/UX, AI content creation and more. 2,000+ projects, 100% five-star rated.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aditya Yadav | Darkr3nder - Graphic Designer, Web Developer &amp; AI Creator">
+<meta property="og:description" content="Graphic Designer, Web Developer &amp; AI Creator with 20+ years of experience. 2,000+ projects delivered with a Top-Rated, 100% five-star record.">
+<meta property="og:url" content="https://adityayadav.pages.dev/">
+<meta property="og:image" content="https://adityayadav.pages.dev/favicon-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aditya Yadav | Darkr3nder - Graphic Designer, Web Developer &amp; AI Creator">
+<meta name="twitter:description" content="Graphic Designer, Web Developer &amp; AI Creator with 20+ years of experience. 2,000+ projects delivered with a Top-Rated, 100% five-star record.">
+<meta name="twitter:image" content="https://adityayadav.pages.dev/favicon-512x512.png">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0b0a0a">
+
+<!-- ONLY external dependency. See notes at bottom of file for how to remove it. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0b0a0a;
+    --panel:#121110;
+    --panel-hi:#1b1715;
+    --line-warm:rgba(252,232,204,0.17);
+    --cream:#fce8cc;
+    --cream-soft:#ecdabb;
+    --ink:#f7f2ea;
+    --ink-dim:#bcb2a6;
+    --ink-faint:#8a8074;
+
+    --red:#e43033;
+    --red-bright:#f0504e;
+    --red-base:#6e1d20;
+
+    --sw-1:#9c272a;
+    --sw-2:#b82a2e;
+    --sw-3:#ce2d31;
+    --sw-4:#e43033;
+    --sw-5:#f0504e;
+
+    --glow-a:rgba(176,30,44,0.10);
+    --glow-b:rgba(140,24,36,0.038);
+    --glow-c:rgba(120,20,32,0.03);
+    --glow-edge:rgba(0,0,0,0.55);
+    --btn-ink:#1a0c0a;
+
+    --serif:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --display:'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    --body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  body.day-mode{
+    --bg:#f7f2ea;
+    --panel:#efe8dc;
+    --panel-hi:#e6ddcd;
+    --line-warm:rgba(26,21,17,0.16);
+    --cream:#17120f;
+    --cream-soft:#3c342c;
+    --ink:#14100c;
+    --ink-dim:#5d5449;
+    --ink-faint:#8d8375;
+    --red-base:#e0c9b4;
+    --btn-ink:#fff6ee;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    transition:background-color .6s ease, color .6s ease;
+  }
+  ::selection{background:var(--red);color:#fff;}
+
+  /* ---------- shared right-to-left red sweep ---------- */
+  @keyframes sweepRTL{
+    from{background-position:100% 50%;}
+    to{background-position:-100% 50%;}
+  }
+
+  .sweep-text,
+  .roles .dot,
+  .exp-row .years,
+  #contact h2 em,
+  footer .fred{
+    background-image:linear-gradient(90deg,
+      var(--sw-1) 0%,
+      var(--sw-1) 30%,
+      var(--sw-2) 38%,
+      var(--sw-3) 44%,
+      var(--sw-4) 47%,
+      var(--sw-5) 50%,
+      var(--sw-4) 53%,
+      var(--sw-3) 56%,
+      var(--sw-2) 62%,
+      var(--sw-1) 70%,
+      var(--sw-1) 100%);
+    background-size:200% 100%;
+    background-repeat:repeat;
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:var(--red);
+    animation:sweepRTL 3.08s linear infinite;
+  }
+
+  .sweep-defs{position:absolute;width:0;height:0;overflow:hidden;}
+
+  /* ---------- ambient layers ---------- */
+  .vignette{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+    opacity:0;
+    transition:opacity 1s cubic-bezier(.33,.9,.3,1);
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, var(--glow-a), var(--glow-b) 42%, transparent 68%),
+      radial-gradient(ellipse 46% 32% at 50% 12%, var(--glow-c), transparent 64%),
+      radial-gradient(ellipse at 50% 100%, var(--glow-edge), transparent 58%);
+  }
+  body.day-mode .vignette{display:none;}
+
+  .grain{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+    opacity:.03;
+    mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:140px 140px;
+  }
+  body.day-mode .grain{opacity:.022;mix-blend-mode:multiply;}
+
+  /* ---------- header ---------- */
+  header{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:7rem 1.5rem 0;
+    z-index:2;
+  }
+  .crest{
+    width:250px;
+    height:250px;
+    max-width:66vw;
+    object-fit:contain;
+    opacity:0;
+    animation:crestIn 1.5s cubic-bezier(.16,.84,.28,1) forwards;
+  }
+  @keyframes crestIn{
+    from{opacity:0;transform:translateY(-16px) scale(.94);}
+    to{opacity:1;transform:translateY(0) scale(1);}
+  }
+  .name-block{
+    margin-top:2rem;
+    opacity:0;
+    animation:riseIn 1.2s cubic-bezier(.16,.84,.28,1) .4s forwards;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+  }
+  @keyframes riseIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+
+  .name{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(1.44rem,3.87vw,2.16rem);
+    letter-spacing:.22em;
+    line-height:1.15;
+    color:var(--cream);
+    text-transform:uppercase;
+    text-indent:.22em;
+  }
+
+  .handle-sub{
+    margin-top:.7rem;
+    font-family:var(--display);
+    font-weight:300;
+    font-size:clamp(.86rem,2.32vw,1.3rem);
+    letter-spacing:.22em;
+    color:var(--cream-soft);
+    text-transform:uppercase;
+    text-indent:.22em;
+  }
+
+  .roles{
+    margin-top:1.5rem;
+    font-family:var(--mono);
+    font-size:.95rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--ink-dim);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .roles .dot{margin:0 .7em;}
+
+  .rule{
+    width:130px;
+    height:2px;
+    margin:1.7rem auto 0;
+    background-color:var(--red-base);
+    background-image:linear-gradient(90deg,
+      rgba(156,39,42,0) 0%,
+      rgba(156,39,42,0) 32%,
+      rgba(156,39,42,0.72) 39%,
+      rgba(184,42,46,0.86) 43%,
+      rgba(206,45,49,0.94) 46%,
+      rgba(228,48,51,0.98) 48%,
+      rgba(240,80,78,1) 50%,
+      rgba(228,48,51,0.98) 52%,
+      rgba(206,45,49,0.94) 54%,
+      rgba(184,42,46,0.86) 57%,
+      rgba(156,39,42,0.72) 61%,
+      rgba(156,39,42,0) 68%,
+      rgba(156,39,42,0) 100%);
+    background-size:200% 100%;
+    background-repeat:repeat;
+    animation:sweepRTL 3.08s linear infinite;
+  }
+
+  .tagline{
+    margin:1.4rem auto 0;
+    max-width:540px;
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.12rem;
+    font-weight:400;
+    line-height:1.6;
+    letter-spacing:.02em;
+    color:var(--ink-dim);
+    text-align:center;
+  }
+
+  /* ---------- theme toggle ---------- */
+  .theme-switch-wrap{
+    position:relative;
+    z-index:3;
+    display:flex;
+    justify-content:center;
+    padding:4.2rem 1.5rem 0;
+  }
+  .theme-toggle{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid var(--line-warm);
+    background:transparent;
+    color:var(--cream-soft);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    transition:border-color .4s ease, color .4s ease, background .4s ease, transform .4s cubic-bezier(.3,.8,.3,1);
+  }
+  .theme-toggle:hover{
+    border-color:var(--red);
+    color:var(--red);
+    transform:translateY(-2px);
+  }
+  .theme-toggle svg{width:19px;height:19px;display:block;}
+  .theme-toggle .ico-moon{display:none;}
+  body.day-mode .theme-toggle .ico-sun{display:none;}
+  body.day-mode .theme-toggle .ico-moon{display:block;}
+
+  /* ---------- sections ---------- */
+  section{
+    position:relative;
+    z-index:2;
+    max-width:960px;
+    margin:0 auto;
+    padding:4.2rem 1.5rem;
+  }
+  .sec-head{
+    margin-bottom:2rem;
+    border-bottom:1px solid var(--line-warm);
+    padding-bottom:1.1rem;
+  }
+  .sec-title{
+    display:inline-block;
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(1.7rem,3.6vw,2.5rem);
+    letter-spacing:.01em;
+    line-height:1.15;
+  }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity 1s cubic-bezier(.16,.84,.28,1), transform 1s cubic-bezier(.16,.84,.28,1);
+    will-change:opacity, transform;
+  }
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .stagger > *{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity .85s cubic-bezier(.16,.84,.28,1), transform .85s cubic-bezier(.16,.84,.28,1);
+  }
+  .stagger.in > *{opacity:1;transform:translateY(0);}
+  .stagger.in > *:nth-child(1){transition-delay:.04s;}
+  .stagger.in > *:nth-child(2){transition-delay:.10s;}
+  .stagger.in > *:nth-child(3){transition-delay:.16s;}
+  .stagger.in > *:nth-child(4){transition-delay:.22s;}
+  .stagger.in > *:nth-child(5){transition-delay:.28s;}
+  .stagger.in > *:nth-child(6){transition-delay:.34s;}
+  .stagger.in > *:nth-child(7){transition-delay:.40s;}
+  .stagger.in > *:nth-child(8){transition-delay:.46s;}
+  .stagger.in > *:nth-child(9){transition-delay:.52s;}
+  .stagger.in > *:nth-child(10){transition-delay:.58s;}
+
+  /* ---------- about ---------- */
+  #about .lede{
+    font-family:var(--serif);
+    font-weight:300;
+    font-size:1.62rem;
+    line-height:1.55;
+    color:var(--cream);
+    max-width:780px;
+  }
+
+  .phil-grid{
+    position:relative;
+    margin-top:2.8rem;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2.6rem 3.4rem;
+  }
+  .phil-grid::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:1px;
+    transform:translateX(-50%);
+    background:linear-gradient(180deg,
+      transparent 0%,
+      var(--cream-soft) 16%,
+      var(--cream-soft) 84%,
+      transparent 100%);
+    opacity:.32;
+  }
+  .phil-item h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.3rem;
+    color:var(--cream);
+    line-height:1.2;
+    margin-bottom:.55rem;
+  }
+  .phil-item p{
+    font-size:.97rem;
+    line-height:1.68;
+    color:var(--ink-dim);
+  }
+  .phil-item p + p{margin-top:.7rem;}
+
+  .stat-row{
+    margin-top:2.8rem;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line-warm);
+    border-bottom:1px solid var(--line-warm);
+  }
+  .stat{
+    padding:1.6rem 1.2rem;
+    border-right:1px solid var(--line-warm);
+  }
+  .stat:last-child{border-right:none;}
+  .stat b{
+    display:block;
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:2.5rem;
+    color:var(--cream);
+    line-height:1;
+  }
+  .stat span{
+    display:block;
+    margin-top:.5rem;
+    font-family:var(--mono);
+    font-size:.64rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- experience ---------- */
+  .exp-row{
+    display:flex;
+    justify-content:space-between;
+    gap:2rem;
+    padding:1.35rem 0;
+    border-bottom:1px solid var(--line-warm);
+    flex-wrap:wrap;
+    transition:border-color .45s ease;
+  }
+  .exp-row:hover{border-bottom-color:rgba(240,80,78,.5);}
+  .exp-row .years{
+    font-family:var(--body);
+    font-weight:500;
+    font-size:1.05rem;
+    letter-spacing:.01em;
+    white-space:nowrap;
+    line-height:1.5;
+  }
+  .exp-row .desc{color:var(--ink-dim);font-size:.95rem;text-align:right;line-height:1.5;}
+
+  .tag-cloud{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+    margin-top:2rem;
+  }
+  .tag{
+    font-family:var(--mono);
+    font-size:.7rem;
+    padding:.45rem .8rem;
+    border:1px solid var(--line-warm);
+    color:var(--ink-dim);
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    transition:border-color .4s ease, color .4s ease, background .4s ease;
+  }
+  .tag:hover{border-color:rgba(240,80,78,.65);color:var(--cream);background:var(--panel-hi);}
+
+  /* ---------- services ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line-warm);
+    border:1px solid var(--line-warm);
+  }
+  .service{
+    background:var(--bg);
+    padding:2.4rem 2rem;
+    position:relative;
+    transition:background .5s cubic-bezier(.3,.8,.3,1);
+  }
+  .service:hover{background:var(--panel);}
+  .service .icon{
+    display:block;
+    width:26px;
+    height:26px;
+    transition:transform .5s cubic-bezier(.3,.8,.3,1);
+  }
+  .service .icon svg{width:100%;height:100%;display:block;overflow:visible;}
+  .service:hover .icon{transform:translateY(-2px);}
+  .service h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.45rem;
+    margin:.95rem 0 .6rem;
+    color:var(--cream);
+    line-height:1.25;
+  }
+  .service p{
+    font-size:.97rem;
+    color:var(--ink-dim);
+    line-height:1.62;
+  }
+
+  /* ---------- why ---------- */
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1.5rem 2.4rem;
+  }
+  .why-item{
+    display:flex;
+    align-items:flex-start;
+    gap:.85rem;
+    font-size:.98rem;
+    color:var(--ink);
+    line-height:1.55;
+    padding-bottom:1.1rem;
+    border-bottom:1px solid var(--line-warm);
+  }
+  .why-item .mark{
+    flex-shrink:0;
+    width:16px;
+    height:16px;
+    margin-top:.22rem;
+  }
+  .why-item .mark svg{width:100%;height:100%;display:block;}
+  .why-note{
+    margin-top:2.2rem;
+    font-family:var(--serif);
+    font-size:1.3rem;
+    font-weight:300;
+    font-style:italic;
+    line-height:1.6;
+    color:var(--cream-soft);
+    max-width:680px;
+  }
+
+  /* ---------- education ---------- */
+  .edu-row{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:2.4rem;
+  }
+  .edu-item{
+    border-left:1px solid var(--line-warm);
+    padding-left:1.3rem;
+  }
+  .edu-item .deg{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.6rem;
+    color:var(--cream);
+    line-height:1;
+  }
+  .edu-item .full{font-size:.88rem;color:var(--ink-dim);margin-top:.5rem;line-height:1.5;}
+
+  /* ---------- contact ---------- */
+  #contact{text-align:center;padding-bottom:6rem;}
+  #contact h2{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(2rem,5vw,3.1rem);
+    color:var(--cream);
+    line-height:1.1;
+    margin-bottom:1rem;
+  }
+  #contact h2 em{font-style:italic;}
+  #contact p{
+    color:var(--ink-dim);
+    max-width:420px;
+    margin:0 auto 2.6rem;
+    font-size:1rem;
+    line-height:1.6;
+  }
+  .cta-row{display:flex;justify-content:center;gap:.9rem;flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono);
+    font-size:.74rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    padding:1rem 2rem;
+    text-decoration:none;
+    display:inline-block;
+    border:1px solid var(--line-warm);
+    color:var(--ink);
+    background:transparent;
+    transition:all .45s cubic-bezier(.3,.8,.3,1);
+  }
+  .btn.primary{
+    border-color:transparent;
+    color:var(--btn-ink);
+    font-weight:500;
+    background-color:var(--sw-4);
+    background-image:linear-gradient(90deg,
+      var(--sw-1) 0%,
+      var(--sw-1) 30%,
+      var(--sw-2) 38%,
+      var(--sw-3) 44%,
+      var(--sw-4) 47%,
+      var(--sw-5) 50%,
+      var(--sw-4) 53%,
+      var(--sw-3) 56%,
+      var(--sw-2) 62%,
+      var(--sw-1) 70%,
+      var(--sw-1) 100%);
+    background-size:200% 100%;
+    background-repeat:repeat;
+    animation:sweepRTL 3.08s linear infinite;
+  }
+  .btn.primary:hover{transform:translateY(-2px);filter:brightness(1.12);}
+  .btn:not(.primary):hover{border-color:var(--cream-soft);color:var(--cream);transform:translateY(-2px);}
+
+  footer{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:2.4rem 1.5rem;
+    border-top:1px solid var(--line-warm);
+    font-family:var(--mono);
+    font-size:.68rem;
+    color:var(--ink-faint);
+    letter-spacing:.1em;
+  }
+  footer .fy{color:var(--ink-dim);}
+
+  @media (max-width:640px){
+    .services-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .edu-row{grid-template-columns:1fr;}
+    .stat-row{grid-template-columns:1fr;}
+    .stat{border-right:none;border-bottom:1px solid var(--line-warm);}
+    .stat:last-child{border-bottom:none;}
+    .exp-row{flex-direction:column;gap:.35rem;}
+    .exp-row .desc{text-align:left;}
+    section{padding:2.9rem 1.5rem;}
+    header{padding-top:5rem;}
+    .theme-switch-wrap{padding-top:2.9rem;}
+    #about .lede{font-size:1.36rem;}
+    .roles{font-size:.78rem;letter-spacing:.14em;}
+    .tagline{font-size:1rem;}
+    .phil-grid{grid-template-columns:1fr;gap:2rem;}
+    .phil-grid::before{display:none;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .crest,.name-block{animation:none;opacity:1;}
+    .vignette{opacity:1 !important;transition:none;}
+    .rule{animation:none;}
+    .btn.primary{animation:none;background-image:none;background-color:var(--red);}
+    .sweep-text,.roles .dot,.exp-row .years,#contact h2 em,footer .fred{
+      animation:none;-webkit-text-fill-color:var(--red);
+    }
+    .reveal,.stagger > *{opacity:1;transform:none;transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<svg class="sweep-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="fireSweep" x1="1" y1="0" x2="2" y2="0">
+      <stop offset="0" stop-color="#9c272a"/>
+      <stop offset="0.30" stop-color="#9c272a"/>
+      <stop offset="0.38" stop-color="#b82a2e"/>
+      <stop offset="0.44" stop-color="#ce2d31"/>
+      <stop offset="0.47" stop-color="#e43033"/>
+      <stop offset="0.50" stop-color="#f0504e"/>
+      <stop offset="0.53" stop-color="#e43033"/>
+      <stop offset="0.56" stop-color="#ce2d31"/>
+      <stop offset="0.62" stop-color="#b82a2e"/>
+      <stop offset="0.70" stop-color="#9c272a"/>
+      <stop offset="1" stop-color="#9c272a"/>
+      <animate attributeName="x1" values="1;-1" dur="3.08s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="2;0" dur="3.08s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="vignette" id="glowLayer"></div>
+<div class="grain"></div>
+
+<header>
+  <img src="favicon-512x512.png" alt="Aditya Yadav monogram" class="crest" width="512" height="512">
+  <div class="name-block">
+    <div class="name"><span class="sweep-text">Aditya</span> Yadav</div>
+    <div class="handle-sub">Darkr<span class="sweep-text">3</span>nder</div>
+    <div class="roles">Graphic Designer <span class="dot">/</span> Web Developer <span class="dot">/</span> AI Creator <span class="dot">/</span> Digital Artist</div>
+    <div class="rule"></div>
+    <p class="tagline">Crafted by experience. Driven by ideas. Evolved with AI.</p>
+  </div>
+</header>
+
+<div class="theme-switch-wrap">
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch between day and night mode">
+    <span class="ico ico-sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.4M12 19.2v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg></span>
+    <span class="ico ico-moon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.4 14.6A8.6 8.6 0 0 1 9.4 3.6a8.6 8.6 0 1 0 11 11Z"/></svg></span>
+  </button>
+</div>
+
+<section id="about" class="reveal">
+  <div class="sec-head">
+    <h2 class="sec-title sweep-text">About</h2>
+  </div>
+  <p class="lede">I shape ideas into visual experiences at the intersection of design, imagery, digital craft, and the evolving possibilities of AI.</p>
+
+  <div class="phil-grid">
+    <div class="phil-item">
+      <h3>Design Philosophy</h3>
+      <p>With 20+ years of experience across Graphic Design, Branding, Photo Editing/Retouching, UI/UX, Web design, Digital art, and now with AI-powered creative work, I turn ideas into visuals that have purpose and personality.</p>
+    </div>
+    <div class="phil-item">
+      <h3>Exploration</h3>
+      <p>Every project starts with understanding the problem, the audience, and what needs to happen next. The design comes after.</p>
+    </div>
+    <div class="phil-item">
+      <h3>Iteration</h3>
+      <p>I explore, test, refine, and simplify. Ideas evolve through collaboration rather than arriving as one precious final concept.</p>
+    </div>
+    <div class="phil-item">
+      <h3>Craft</h3>
+      <p>Experience lives in the details, from pixel-perfect retouching and production-ready files to identities that work everywhere they need to.</p>
+      <p>AI helps me move faster and explore further. Knowing what is worth keeping is still the craft.</p>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat"><b>20+</b><span>Years Experience</span></div>
+    <div class="stat"><b>2,000+</b><span>Projects Completed</span></div>
+    <div class="stat"><b>100%</b><span>Five-Star Rating</span></div>
+  </div>
+</section>
+
+<section id="experience" class="reveal">
+  <div class="sec-head">
+    <h2 class="sec-title sweep-text">Experience</h2>
+  </div>
+  <div class="exp-row">
+    <div class="years">20+ years</div>
+    <div class="desc">Graphic Design, Photo Editing, Web Design, UI/UX Design</div>
+  </div>
+  <div class="exp-row">
+    <div class="years">10+ years</div>
+    <div class="desc">Social Media Management, Digital Advertising, Brand Promotion</div>
+  </div>
+  <div class="exp-row">
+    <div class="years">3+ years</div>
+    <div class="desc">Generative AI - ChatGPT, Midjourney, Claude, Gemini, RunwayML</div>
+  </div>
+
+  <div class="tag-cloud">
+    <span class="tag">Photoshop</span>
+    <span class="tag">Illustrator</span>
+    <span class="tag">After Effects</span>
+    <span class="tag">UI/UX Design</span>
+    <span class="tag">App Design</span>
+    <span class="tag">Photo Retouching</span>
+    <span class="tag">Photo Manipulation</span>
+    <span class="tag">Photo Restoration</span>
+    <span class="tag">Logo Design</span>
+    <span class="tag">Brand Identity</span>
+    <span class="tag">Template Design</span>
+    <span class="tag">Brochure Design</span>
+    <span class="tag">AI Content Creation</span>
+    <span class="tag">ChatGPT</span>
+    <span class="tag">Midjourney</span>
+    <span class="tag">RunwayML</span>
+    <span class="tag">Video Editing</span>
+    <span class="tag">Motion Graphics</span>
+    <span class="tag">Illustration</span>
+    <span class="tag">Social Media Promotion</span>
+    <span class="tag">Digital Marketing</span>
+    <span class="tag">Affiliate Marketing</span>
+  </div>
+</section>
+
+<section id="services" class="reveal">
+  <div class="sec-head">
+    <h2 class="sec-title sweep-text">Services</h2>
+  </div>
+  <div class="services-grid stagger">
+
+    <div class="service">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#fireSweep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c-5.2 0-9.5 3.9-9.5 8.7 0 4.3 3.1 6.8 6.3 6.8 1.5 0 2.2-.8 2.2-1.8 0-.6-.3-1-.6-1.4-.3-.4-.5-.7-.5-1.2 0-.9.8-1.6 1.8-1.6h1.6c3.3 0 5.7-2.2 5.7-5.3 0-2.9-3-4.2-7-4.2Z"/><circle cx="7.2" cy="10.2" r="1.1" fill="url(#fireSweep)" stroke="none"/><circle cx="10.4" cy="6.9" r="1.1" fill="url(#fireSweep)" stroke="none"/><circle cx="14.6" cy="7.2" r="1.1" fill="url(#fireSweep)" stroke="none"/></svg></span>
+      <h3>Graphic Design</h3>
+      <p>Custom graphics, illustrations, and visual assets crafted in Photoshop, Illustrator, and AI-powered tools - from concept sketches to polished final art.</p>
+    </div>
+
+    <div class="service">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#fireSweep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15.2 3.6 20.4 8.8 9.6 19.6l-5.2-5.2z"/><path d="m14 4.8 5.2 5.2"/><path d="M4.4 14.4 2.8 21.2l6.8-1.6"/><path d="m6.6 16.6 1.8 1.8"/></svg></span>
+      <h3>Illustration &amp; Digital Art</h3>
+      <p>Custom illustrations, character art, and digital paintings - hand-crafted and AI-assisted - for branding, editorial, and creative projects.</p>
+    </div>
+
+    <div class="service">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#fireSweep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.6h3.4L8 5.2h8l1.6 2.4H21v11.2H3z"/><circle cx="12" cy="12.8" r="3.4"/></svg></span>
+      <h3>Photo Editing &amp; Retouching</h3>
+      <p>High-end retouching, photo manipulation, creative compositing, and background/object removal for portraits, products, and campaigns.</p>
+    </div>
+
+    <div class="service">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#fireSweep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.6"/><path d="M10 3v3M14 3v3M10 18v3M14 18v3M3 10h3M3 14h3M18 10h3M18 14h3"/><path d="m11.3 10.4.7-1.6.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7z" fill="url(#fireSweep)" stroke="none"/></svg></span>
+      <h3>AI-Powered Content Creation</h3>
+      <p>AI-assisted image generation, video generation &amp; editing, enhancement, concept art, and digital illustration using tools like Midjourney, ChatGPT, and RunwayML.</p>
+    </div>
+
+    <div class="service">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#fireSweep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8.4 9-3.6 3.4 3.6 3.4"/><path d="m15.6 9 3.6 3.4-3.6 3.4"/><path d="m13.4 6.6-2.8 11.2"/></svg></span>
+      <h3>Web &amp; UI/UX Design</h3>
+      <p>Website design and build, landing pages, mobile app interfaces, and intuitive user experiences from wireframe to launch.</p>
+    </div>
+
+    <div class="service">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#fireSweep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.6 9.4v4.4a1.4 1.4 0 0 0 1.4 1.4h2.2l7.6 4.2V5.2L7.2 9.4z"/><path d="M18.2 9.2a4 4 0 0 1 0 5.6"/><path d="M20.6 6.6a7.4 7.4 0 0 1 0 10.8"/><path d="M7.2 15.2v3.4a1.4 1.4 0 0 0 1.4 1.4h1"/></svg></span>
+      <h3>Social Media &amp; Digital Marketing</h3>
+      <p>Social media management, content calendars, paid advertising, and digital marketing strategy to grow reach and engagement.</p>
+    </div>
+
+    <div class="service">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#fireSweep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l2.6 1.9 3.2-.1.9 3.1 2.5 2-1.5 2.9 1.5 2.9-2.5 2-.9 3.1-3.2-.1L12 21.2l-2.6-1.9-3.2.1-.9-3.1-2.5-2 1.5-2.9-1.5-2.9 2.5-2 .9-3.1 3.2.1z"/><path d="m9.4 12.1 1.9 1.9 3.5-3.7"/></svg></span>
+      <h3>Brand &amp; Identity</h3>
+      <p>Logo design, brand identity systems, style guides, and full brand re-imagining for businesses and startups.</p>
+    </div>
+
+    <div class="service">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#fireSweep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="11.6" rx="1.4"/><path d="M12 15.6v3.2"/><path d="m9 21.2 3-2.4 3 2.4"/><path d="M7.4 12.2v-2.6M11.2 12.2V7.8M15 12.2v-1.4"/></svg></span>
+      <h3>Presentation Design</h3>
+      <p>Pitch decks, investor presentations, and PowerPoint/Keynote design that communicates ideas clearly and persuasively.</p>
+    </div>
+
+    <div class="service">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#fireSweep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 7.6h14.8l-1.2 12.2a1.4 1.4 0 0 1-1.4 1.2H7.2a1.4 1.4 0 0 1-1.4-1.2z"/><path d="M8.8 10V6.6a3.2 3.2 0 0 1 6.4 0V10"/></svg></span>
+      <h3>E-Commerce &amp; Product Imagery</h3>
+      <p>Product photo editing, image cleanup, and listing-ready visuals for e-commerce stores and Amazon listings.</p>
+    </div>
+
+    <div class="service">
+      <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="url(#fireSweep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8.4V3.2h10v5.2"/><rect x="3.4" y="8.4" width="17.2" height="7.4" rx="1.4"/><rect x="7" y="14" width="10" height="6.8"/><circle cx="17.4" cy="11.6" r="1" fill="url(#fireSweep)" stroke="none"/></svg></span>
+      <h3>Print &amp; Digital Collateral</h3>
+      <p>Brochures, flyers, business cards, and print-ready PDF design for offline and digital use.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="why" class="reveal">
+  <div class="sec-head">
+    <h2 class="sec-title sweep-text">Why Work With Me</h2>
+  </div>
+  <div class="why-grid stagger">
+    <div class="why-item"><span class="mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="url(#fireSweep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8.4 3.2 3.2L13 4.8"/></svg></span> Premium-quality design &amp; visual execution</div>
+    <div class="why-item"><span class="mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="url(#fireSweep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8.4 3.2 3.2L13 4.8"/></svg></span> Clear communication throughout the project</div>
+    <div class="why-item"><span class="mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="url(#fireSweep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8.4 3.2 3.2L13 4.8"/></svg></span> Reliable turnaround times</div>
+    <div class="why-item"><span class="mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="url(#fireSweep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8.4 3.2 3.2L13 4.8"/></svg></span> Strong attention to detail</div>
+    <div class="why-item"><span class="mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="url(#fireSweep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8.4 3.2 3.2L13 4.8"/></svg></span> Creative solutions tailored to your goals</div>
+    <div class="why-item"><span class="mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="url(#fireSweep)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8.4 3.2 3.2L13 4.8"/></svg></span> Modern AI-enhanced workflows for greater efficiency</div>
+  </div>
+  <p class="why-note">I'm committed to building long-term relationships with clients by consistently delivering high-quality creative work that exceeds expectations.</p>
+</section>
+
+<section id="education" class="reveal">
+  <div class="sec-head">
+    <h2 class="sec-title sweep-text">Education</h2>
+  </div>
+  <div class="edu-row">
+    <div class="edu-item">
+      <div class="deg">BCS</div>
+      <div class="full">Bachelor of Science in Computer Science</div>
+    </div>
+    <div class="edu-item">
+      <div class="deg">MCA</div>
+      <div class="full">Masters in Computer Applications</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <h2>Let's Work <em>Together</em></h2>
+  <p>Have a project in mind? I'd love to hear about it.</p>
+  <div class="cta-row">
+    <a href="https://wa.me/919595090202" class="btn primary" target="_blank" rel="noopener">WhatsApp Me</a>
+    <a href="mailto:darkr3nder@gmail.com" class="btn">Email Me</a>
+    <a href="http://pph.me/darkr3nder" class="btn" target="_blank" rel="noopener">Portfolio</a>
+  </div>
+</section>
+
+<footer>
+  <span class="fy">&copy; 2026</span> <span class="fred">Aditya</span> <span class="fy">Yadav</span> / <span class="fy">Darkr</span><span class="fred">3</span><span class="fy">nder</span>
+</footer>
+
+<script>
+(function(){
+  var glow = document.getElementById('glowLayer');
+  if(glow){
+    var ticking = false;
+    function apply(){
+      var scrolled = window.scrollY || window.pageYOffset || 0;
+      var t = Math.min(scrolled / 620, 1);
+      glow.style.opacity = t * t * (3 - 2 * t);
+      ticking = false;
+    }
+    function onScroll(){
+      if(!ticking){ window.requestAnimationFrame(apply); ticking = true; }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    apply();
+  }
+
+  var reveals = document.querySelectorAll('.reveal, .stagger');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.1, rootMargin:'0px 0px -80px 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  var toggle = document.getElementById('themeToggle');
+  if(toggle){
+    try{
+      if(localStorage.getItem('ay-theme') === 'day'){
+        document.body.classList.add('day-mode');
+      }
+    }catch(e){}
+    toggle.addEventListener('click', function(){
+      var isDay = document.body.classList.toggle('day-mode');
+      try{ localStorage.setItem('ay-theme', isDay ? 'day' : 'night'); }catch(e){}
+    });
+  }
+})();
+</script>
+
+<!--
+==========================================================================
+  SETUP
+==========================================================================
+  1. Put this file in your repo as index.html
+  2. Put these generated icon files beside it (all corners transparent):
+       favicon.ico
+       favicon-16x16.png
+       favicon-32x32.png
+       favicon-192x192.png
+       favicon-512x512.png   <- also used as the hero logo and social image
+       apple-touch-icon.png  <- intentionally opaque, iOS flattens alpha to white
+  3. Push. Cloudflare Pages redeploys automatically.
+
+  Hard-refresh (Ctrl/Cmd+Shift+R) after deploy - browsers cache favicons
+  very aggressively, often ignoring normal refreshes.
+
+==========================================================================
+  REMOVING THE GOOGLE FONTS DEPENDENCY (optional)
+==========================================================================
+  The <link> in <head> is the only external request this page makes.
+  To go fully offline:
+
+  1. Go to google-webfonts-helper (or fonts.google.com) and download
+     woff2 files for: Cormorant Garamond (300,400,500 + italics),
+     Montserrat (200,300,400,500), Inter (400,500,600),
+     JetBrains Mono (400,500)
+  2. Put them in a /fonts folder beside this file
+  3. Delete the three <link> tags in <head>
+  4. Add @font-face rules at the top of the <style> block, e.g.:
+
+     @font-face{
+       font-family:'Montserrat';
+       src:url('fonts/montserrat-300.woff2') format('woff2');
+       font-weight:300; font-display:swap;
+     }
+
+  The CSS already uses variables (--serif, --display, --body, --mono)
+  with system fallbacks, so if you skip this entirely the page still
+  renders correctly, just with fallback typefaces.
+
+==========================================================================
+  QUICK REFERENCE
+==========================================================================
+  Accent red ramp (used by every animated element):
+    --sw-1  #9c272a   outer
+    --sw-2  #b82a2e
+    --sw-3  #ce2d31
+    --sw-4  #e43033   brand accent
+    --sw-5  #f0504e   peak
+
+  Sweep speed: 3.08s   (search "3.08s" - appears in 4 places)
+  Logo size:   250px   (.crest)
+  Day/night palette:   body.day-mode block
+-->
+
+</body>
+</html>
