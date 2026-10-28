@@ -46,11 +46,11 @@
     --red-bright:#f0504e;
     --red-base:#6e1d20;
 
-    --sw-1:#9c272a;
-    --sw-2:#b82a2e;
-    --sw-3:#ce2d31;
-    --sw-4:#e43033;
-    --sw-5:#f0504e;
+    --sw-1:#e43033;
+    --sw-2:#e43033;
+    --sw-3:#e73739;
+    --sw-4:#ec4547;
+    --sw-5:#f6625f;
 
     --glow-a:rgba(176,30,44,0.10);
     --glow-b:rgba(140,24,36,0.038);
@@ -164,9 +164,9 @@
     z-index:2;
   }
   .crest{
-    width:250px;
-    height:250px;
-    max-width:66vw;
+    width:175px;
+    height:175px;
+    max-width:46vw;
     object-fit:contain;
     opacity:0;
     animation:crestIn 1.5s cubic-bezier(.16,.84,.28,1) forwards;
@@ -400,7 +400,7 @@
     display:block;
     font-family:var(--serif);
     font-weight:500;
-    font-size:2.5rem;
+    font-size:1.25rem;
     color:var(--red);
     line-height:1;
   }
@@ -656,17 +656,17 @@
 <svg class="sweep-defs" aria-hidden="true" focusable="false">
   <defs>
     <linearGradient id="fireSweep" x1="1" y1="0" x2="2" y2="0">
-      <stop offset="0" stop-color="#9c272a"/>
-      <stop offset="0.30" stop-color="#9c272a"/>
-      <stop offset="0.38" stop-color="#b82a2e"/>
-      <stop offset="0.44" stop-color="#ce2d31"/>
-      <stop offset="0.47" stop-color="#e43033"/>
-      <stop offset="0.50" stop-color="#f0504e"/>
-      <stop offset="0.53" stop-color="#e43033"/>
-      <stop offset="0.56" stop-color="#ce2d31"/>
-      <stop offset="0.62" stop-color="#b82a2e"/>
-      <stop offset="0.70" stop-color="#9c272a"/>
-      <stop offset="1" stop-color="#9c272a"/>
+      <stop offset="0" stop-color="#e43033"/>
+      <stop offset="0.30" stop-color="#e43033"/>
+      <stop offset="0.38" stop-color="#e43033"/>
+      <stop offset="0.44" stop-color="#e73739"/>
+      <stop offset="0.47" stop-color="#ec4547"/>
+      <stop offset="0.50" stop-color="#f6625f"/>
+      <stop offset="0.53" stop-color="#ec4547"/>
+      <stop offset="0.56" stop-color="#e73739"/>
+      <stop offset="0.62" stop-color="#e43033"/>
+      <stop offset="0.70" stop-color="#e43033"/>
+      <stop offset="1" stop-color="#e43033"/>
       <animate attributeName="x1" values="1;-1" dur="3.08s" repeatCount="indefinite"/>
       <animate attributeName="x2" values="2;0" dur="3.08s" repeatCount="indefinite"/>
     </linearGradient>
