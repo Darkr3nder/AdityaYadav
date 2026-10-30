@@ -163,6 +163,9 @@
     padding:7rem 1.5rem 0;
     z-index:2;
   }
+  .crest-day{display:none;}
+  body.day-mode .crest-night{display:none;}
+  body.day-mode .crest-day{display:block;}
   .crest{
     width:175px;
     height:175px;
@@ -677,7 +680,7 @@
 <div class="grain"></div>
 
 <header>
-  <img src="favicon-512x512.png" alt="Aditya Yadav monogram" class="crest" width="512" height="512">
+  <img src="logo.png" alt="Aditya Yadav monogram" class="crest crest-night" width="700" height="700"><img src="logo-day.png" alt="" aria-hidden="true" class="crest crest-day" width="700" height="700">
   <div class="name-block">
     <div class="name"><span class="sweep-text">Aditya</span> Yadav</div>
     <div class="handle-sub">Darkr<span class="sweep-text">3</span>nder</div>
